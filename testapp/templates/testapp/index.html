@@ -1,18 +1,24 @@
-<script type="text/javascript">
-  function customSubmit(){
-    myForm = document.getElementById("myForm");
-    textInput = document.getElementById("dude");
-    user = textInput.value;
-    myForm.action = "/" + user;
-    myForm.submit();
-  }
-</script>
+<html>
+  <head>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function customSubmit(){
+        myForm = document.getElementById("myForm");
+        textInput = document.getElementById("dude");
+        user = textInput.value;
+        myForm.action = "/" + user;
+        myForm.submit();
+      }
+    </script>
 
-<h1>Welcome to TestSite!</h1>
-<h3>Where all your tests come true...</h3>
+    <h1>Welcome to TestSite!</h1>
+    <h3>Where all your tests come true...</h3>
 
-<form id="myForm" method="GET">
-  <p><input type="text" id="dude" name="dude" value="Jonas" /></p>
-<button onclick="customSubmit()">Submit</button>
-{% csrf_token %}
-</form>
+    <form id="myForm" method="GET">
+      <p><input type="text" id="dude" name="dude" value="Jonas" /></p>
+    <button onclick="customSubmit()">Submit</button>
+    {% csrf_token %}
+    </form>
+  </body>
+</html>
