@@ -1,19 +1,15 @@
 from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render
 
 # Create your views here.
 class IndexView(View):
     def get(self, request):
-        response = HttpResponse(f"<h1>Yo. Method: Get.</h1>\n")
-        response.write(f"<form action='/Jonas'>\n")
-        response.write(f"<input type='text' name='dude' value='Jonas' />\n")
-        response.write(f"<input type='submit' name='submit' value='Submit' />\n")
-        response.write(f"</form>\n")
-        return response
+        return render(request, 'testapp/index.html', {})
 
 class DudeView(View):
     def get(self, request, dude):
         return HttpResponse(f"<h1>Dude: {dude} Method: Get.</h1>")
-    def get(self, request, dude):
+    def post(self, request, dude):
         return HttpResponse(f"<h1>Dude: {dude} Method: Post.</h1>")
